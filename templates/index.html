@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/styles_index.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar bg-body-tertiary">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="/static/images/logo.png" alt="Bootstrap" width="30" height="24" id="logo">
+                </a>
+                <div>
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#div-images">Images</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="home">
+            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="1000">
+                        <img src="/static/images/image1.jpg" class="d-block w-100 images" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Timeless Elegance in Gold & Silver</h5>
+                            <p>Handcrafted 22K gold and premium silver ornaments with certified diamond craftsmanship</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="/static/images/image2.jpg" class="d-block w-100 images" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Tradition Meets Modern Design</h5>
+                            <p>From traditional Bengali designs to contemporary styles, find jewelry that celebrates heritage while embracing modern aesthetics.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/static/images/image3.jpg" class="d-block w-100 images" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Certified Diamond Excellence</h5>
+                            <p>Discover our exclusive collection of I.G.I certified natural diamond jewelry, each piece a testament to superior craftsmanship.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div id="about">
+            <div>
+                <p class="text-data">N.K. Gold Silver Smith is a trusted name in the world of handcrafted gold and
+                    silver ornaments. With a
+                    legacy of quality and craftsmanship, we specialize in creating exquisite 18K Hallmark I.G.I
+                    Certified
+                    Natural Diamond Ornaments and 22K Hallmark Gold Jewelry.</p>
+                <img src="/static/images/image4.jpg" class="div-img">
+            </div>
+            <div>
+                <img src="/static/images/image5.jpg" class="div-img">
+                <p class="text-data">
+                    Located in the heart of Barabazar, Kolkata, we serve both wholesale and retail customers with unique
+                    designs and guaranteed purity. Whether you're looking for traditional elegance or modern styles, we
+                    ensure every piece is made with precision, passion, and authenticity.</p>
+            </div>
+        </div>
+        <div id="gallery">
+            {% for image in images %}
+                <div>
+                    <h5>{{image.title}}</h5>
+                    <p>{{image.description}}</p>
+                    <img src={{image.image_path}} class="uploaded-images" alt="{{image.title}}">
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+    <footer>
+        <div id="contact">
+            <h5 class="bold">Visit us at:</h5>
+            <span>3 No. Kanu Lal Lane, 3rd Floor, Room No. 3C,Barabazar, Burtolla Street, Kolkata – 700007 Near Vishudha Nand Hospital.For inquiries, call us at </span>
+            <p class="bold">+91 9830446865</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

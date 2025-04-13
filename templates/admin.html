@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="./static/styles_admin.css">
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data" action="/upload">
+        <input type="text" name="title" placeholder="Title" required>
+        <textarea name="description" placeholder="Description" required></textarea>
+        <input type="file" name="image" required>
+        <button type="submit">Upload</button>
+    </form>
+    <div id="gallery">
+        <h2>Image Gallery</h2>
+        {% for image in images %}
+            <div class="image-item">
+                <img src={{image.image_path}} alt="{{ image.title }}" class="div-img">
+                <h3>{{ image.title }}</h3>
+                <p>{{ image.description }}</p>
+                <form method="post" action="/delete/{{ image._id }}">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+    <form method="post" action="/logout">
+        <button type="submit">Logout</button>
+    </form>
+</body>
+</html>
