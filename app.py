@@ -1,3 +1,4 @@
+import awsgi
 from flask import Flask,render_template,redirect,request,session
 from werkzeug.security import generate_password_hash, check_password_hash
 from pymongo import MongoClient
@@ -80,6 +81,8 @@ def delete(image_id):
             return redirect("/admin")
         return redirect("/admin")
 
+def lambda_handler(event, context):
+    return awsgi.response(app, event, context,base64_content_types={"image/jpeg", "image/png", "image/gif"})
 
 if __name__ == "__main__":
     app.run(debug=True)
