@@ -81,8 +81,6 @@ def delete(image_id):
             return redirect("/admin")
         return redirect("/admin")
 
-def lambda_handler(event, context):
-    return awsgi.response(app, event, context,base64_content_types={"image/jpeg", "image/png", "image/gif"})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
