@@ -7,9 +7,9 @@ import os
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
-mongo_client = MongoClient("mongodb://localhost:27017/")
-db = mongo_client["admin"]
-collection = db["admin"]
+mongo_client = MongoClient("mongodb+srv://skrajiuddin18:Raj24032003@cluster0.i1pmhyj.mongodb.net/")
+db = mongo_client["admin_"]
+collection = db["admin_"]
 image_collection = db["images"]
 
 
