@@ -17,7 +17,7 @@
         <h2>Image Gallery</h2>
         {% for image in images %}
             <div class="image-item">
-                <img src={{image.image_path}} alt="{{ image.title }}" class="div-img">
+                <img src="{{url_for('image',image_id=image._id)}}" alt="{{ image.title }}" class="div-img">
                 <h3>{{ image.title }}</h3>
                 <p>{{ image.description }}</p>
                 <form method="post" action="/delete/{{ image._id }}">

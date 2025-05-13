@@ -15,7 +15,7 @@
         <nav class="navbar bg-body-tertiary">
             <div class="container">
                 <a class="navbar-brand" href="#">
-                    <img src="/static/images/logo.png" alt="Bootstrap" width="30" height="24" id="logo">
+                    <img src="{{url_for('index_image',filename='logo.png')}}" alt="Bootstrap" width="30" height="24" id="logo">
                 </a>
                 <div>
                     <ul class="nav justify-content-end">
@@ -49,21 +49,21 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="1000">
-                        <img src="/static/images/image1.jpg" class="d-block w-100 images" alt="...">
+                        <img src="{{url_for('index_image',filename='image1.jpg')}}" class="d-block w-100 images" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Timeless Elegance in Gold & Silver</h5>
                             <p>Handcrafted 22K gold and premium silver ornaments with certified diamond craftsmanship</p>
                         </div>
                     </div>
                     <div class="carousel-item" data-bs-interval="2000">
-                        <img src="/static/images/image2.jpg" class="d-block w-100 images" alt="...">
+                        <img src="{{url_for('index_image',filename='image2.jpg')}}" class="d-block w-100 images" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Tradition Meets Modern Design</h5>
                             <p>From traditional Bengali designs to contemporary styles, find jewelry that celebrates heritage while embracing modern aesthetics.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="/static/images/image3.jpg" class="d-block w-100 images" alt="...">
+                        <img src="{{url_for('index_image',filename='image3.jpg')}}" class="d-block w-100 images" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Certified Diamond Excellence</h5>
                             <p>Discover our exclusive collection of I.G.I certified natural diamond jewelry, each piece a testament to superior craftsmanship.</p>
@@ -89,10 +89,10 @@
                     legacy of quality and craftsmanship, we specialize in creating exquisite 18K Hallmark I.G.I
                     Certified
                     Natural Diamond Ornaments and 22K Hallmark Gold Jewelry.</p>
-                <img src="/static/images/image4.jpg" class="div-img">
+                <img src="{{url_for('index_image',filename='image4.jpg')}}" class="div-img">
             </div>
             <div>
-                <img src="/static/images/image5.jpg" class="div-img">
+                <img src="{{url_for('index_image',filename='image5.jpg')}}" class="div-img">
                 <p class="text-data">
                     Located in the heart of Barabazar, Kolkata, we serve both wholesale and retail customers with unique
                     designs and guaranteed purity. Whether you're looking for traditional elegance or modern styles, we
@@ -100,11 +100,11 @@
             </div>
         </div>
         <div id="gallery">
-            {% for image in images %}
+            {% for image in images.image_files2 %}
                 <div>
                     <h5>{{image.title}}</h5>
                     <p>{{image.description}}</p>
-                    <img src={{image.image_path}} class="uploaded-images" alt="{{image.title}}">
+                    <img src="{{url_for('image',image_id=image._id)}}" class="uploaded-images" alt="{{image.title}}">
                 </div>
             {% endfor %}
         </div>
